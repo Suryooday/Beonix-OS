@@ -1,159 +1,312 @@
-# Turborepo starter
+<div align="center">
 
-This Turborepo starter is maintained by the Turborepo core team.
+<img src="https://img.shields.io/badge/Beonix-Business%20OS-6366f1?style=for-the-badge&logo=sparkles&logoColor=white" alt="Beonix" />
 
-## Using this example
+# Beonix OS
 
-Run the following command:
+### The AI-Powered Business Operating System for Modern Teams
 
-```sh
-npx create-turbo@latest
+**One platform. Every business function. Fully automated.**
+
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)](https://nextjs.org)
+[![NestJS](https://img.shields.io/badge/NestJS-API-e0234e?style=flat-square&logo=nestjs)](https://nestjs.com)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?style=flat-square&logo=postgresql&logoColor=white)](https://postgresql.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-100%25-3178c6?style=flat-square&logo=typescript)](https://typescriptlang.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+
+</div>
+
+---
+
+## 💡 What is Beonix?
+
+Imagine running your entire business — customer tracking, invoicing, compliance, payments, team workflows, and AI automation — **all from one screen, with one AI assistant at the center.**
+
+That's Beonix.
+
+Most businesses today use 10-15 different apps: a CRM here, an invoice tool there, a separate compliance tracker, a team chat app... and they still end up drowning in spreadsheets. Beonix replaces all of that.
+
+> **Beonix is not a chatbot. It's an operating system for your business — powered by AI.**
+
+---
+
+## ✨ What Can It Actually Do?
+
+### 🤖 AI Assistant — The Brain
+Ask it anything about your business. It knows everything.
+
+```
+You: "How many leads did we recover this month?"
+Beonix: "You recovered 14 leads worth ₹4.2L. Top channel: WhatsApp."
+
+You: "/act send payment reminders to all overdue invoices"
+Beonix: "Done. 7 personalized reminders sent via WhatsApp & email."
 ```
 
-## What's inside?
+It doesn't just answer — it **acts**. Use commands like:
+- `/search` — find anything in your business data
+- `/analyze` — get instant business analysis
+- `/act` — execute real actions (send reminders, approve payroll, etc.)
+- `/workflow` — trigger automated workflows
 
-This Turborepo includes the following packages/apps:
+---
 
-### Apps and Packages
+### 📋 CRM & Lead Recovery
+Stop losing customers you already paid to acquire.
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- **Visual pipeline** — drag leads through deal stages
+- **AI lead scoring** — automatically ranks leads by conversion probability
+- **Recovery workflows** — auto-follows up on cold or at-risk leads
+- **Activity timeline** — full history of every interaction
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+---
 
-### Utilities
+### 🧠 Memory Engine
+Your business has a long-term memory now.
 
-This Turborepo has some additional tools already setup for you:
+- Upload contracts, SOPs, meeting notes, policies — any document
+- **Ask questions** and get answers pulled from your own documents
+- AI remembers past conversations and decisions
+- Never lose institutional knowledge again
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+---
 
-### Build
+### ⚙️ Operations & Workflows
+Automate the repetitive stuff.
 
-To build all apps and packages, run the following command:
+- Build multi-step workflows with a visual drag-and-drop editor
+- Trigger workflows based on events (new lead, overdue invoice, deadline)
+- Run workflows manually or on a schedule
+- Track every execution with full logs
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
+---
 
-```sh
-cd my-turborepo
-turbo build
+### 💰 Capital — Finance Made Simple
+Your financial command center.
+
+- **Invoice management** — create, track, and chase overdue invoices automatically
+- **GST payments** — submit tax filings directly from the platform
+- **Payroll approvals** — one-click approval with full audit trail
+- **Dunning workflows** — AI sends escalating payment reminders so you don't have to
+- **Transaction history** — everything recorded and searchable
+
+---
+
+### 📜 Compliance
+Never miss a deadline or regulatory notice again.
+
+- Tracks GST, MCA, and other regulatory deadlines
+- AI flags risks before they become fines
+- Stores all compliance documents in one place
+- Real-time risk exposure dashboard
+
+---
+
+### 🔌 Integrations
+Connect the tools you already use.
+
+| Integration | What it enables |
+|-------------|----------------|
+| **Google Gemini** | Primary AI reasoning engine |
+| **Groq** | Fast AI inference for real-time responses |
+| **Twilio** | WhatsApp & SMS outreach |
+| **Stripe** | Payment processing |
+| **Google Drive** | Document sync |
+
+---
+
+### 🔔 Real-Time Notifications
+Everything updates live — no refresh needed.
+
+- Instant alerts when a lead closes, invoice is paid, or workflow runs
+- Priority-based notification system (Low → Critical)
+- Delivered via WebSocket — appears on screen the moment it happens
+
+---
+
+## 🏗️ How It's Built (For Developers)
+
+Beonix is a **TypeScript monorepo** built with modern, production-grade technology.
+
+```
+beonix/
+├── apps/
+│   ├── web/          → Next.js 15 frontend (React, TanStack Query, Zustand)
+│   └── api/          → NestJS backend (REST API + WebSocket gateway)
+├── packages/
+│   ├── database/     → Prisma ORM + PostgreSQL schema
+│   └── schemas/      → Shared Zod validation schemas
+└── docker/           → Production Docker & Nginx config
 ```
 
-Without global `turbo`, use your package manager:
+### Tech Stack
 
-```sh
-cd my-turborepo
-npx turbo build
-pnpm dlx turbo build
-pnpm exec turbo build
+| Layer | Technology |
+|-------|-----------|
+| **Frontend** | Next.js 15, React 19, TanStack Query, Zustand |
+| **Backend** | NestJS, Prisma ORM, Socket.IO |
+| **Database** | PostgreSQL 15, Redis 7 |
+| **Vector Memory** | Qdrant (semantic search) |
+| **Auth** | Clerk (multi-tenant, SSO, MFA) |
+| **AI** | Google Gemini, Groq |
+| **Queue** | BullMQ (async job processing) |
+| **Deployment** | Docker Compose, Nginx reverse proxy |
+| **Build System** | Turborepo (monorepo caching) |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Make sure you have these installed:
+- [Node.js 20+](https://nodejs.org)
+- [pnpm 9+](https://pnpm.io) — `npm install -g pnpm`
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (for the database)
+
+---
+
+### Step 1 — Clone the repo
+
+```bash
+git clone https://github.com/Suryooday/Beonix-OS.git
+cd Beonix-OS
 ```
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+---
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+### Step 2 — Set up environment variables
 
-```sh
-turbo build --filter=docs
+Copy the example env file and fill in your keys:
+
+```bash
+cp .env.example .env
 ```
 
-Without global `turbo`:
+Open `.env` and fill in:
 
-```sh
-npx turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
+```ini
+# Database (leave as-is for local Docker setup)
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432/beonix"
+REDIS_URL="redis://:redispassword@localhost:6379"
+
+# Auth — get from https://clerk.com (free account)
+CLERK_SECRET_KEY=sk_test_...
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_...
+
+# AI — get from https://aistudio.google.com (free)
+GEMINI_API_KEY=AIza...
+
+# Optional but recommended
+GROQ_API_KEY=gsk_...          # https://console.groq.com (free)
 ```
 
-### Develop
+---
 
-To develop all apps and packages, run the following command:
+### Step 3 — Start the database
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo dev
+```bash
+docker compose -f docker-compose.production.yml up postgres redis -d
 ```
 
-Without global `turbo`, use your package manager:
+---
 
-```sh
-cd my-turborepo
-npx turbo dev
-pnpm exec turbo dev
-pnpm exec turbo dev
+### Step 4 — Install dependencies
+
+```bash
+pnpm install
 ```
 
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+---
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+### Step 5 — Set up the database schema
 
-```sh
-turbo dev --filter=web
+```bash
+pnpm --filter database db:push
 ```
 
-Without global `turbo`:
+---
 
-```sh
-npx turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
+### Step 6 — Start the development servers
+
+```bash
+pnpm dev
 ```
 
-### Remote Caching
+This starts:
+- **Frontend** → [http://localhost:3000](http://localhost:3000)
+- **API** → [http://localhost:3001](http://localhost:3001)
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+---
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+## 🐳 Production Deployment (Docker)
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+To run the full production stack (frontend + API + database + Nginx):
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo login
+```bash
+docker compose -f docker-compose.production.yml up --build -d
 ```
 
-Without global `turbo`, use your package manager:
+The app will be available at `http://localhost` (port 80).
 
-```sh
-cd my-turborepo
-npx turbo login
-pnpm exec turbo login
-pnpm exec turbo login
-```
+---
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+## 📁 Key Files & Folders
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+| Path | What it is |
+|------|-----------|
+| `apps/web/app/(dashboard)/` | All dashboard pages (CRM, Capital, etc.) |
+| `apps/web/hooks/useDashboardData.ts` | All API query/mutation hooks |
+| `apps/api/src/modules/` | All backend feature modules |
+| `packages/database/prisma/schema.prisma` | The full database schema |
+| `docs/INFRASTRUCTURE.md` | Full deployment & DevOps guide |
+| `docker-compose.production.yml` | Full production Docker stack |
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+---
 
-```sh
-turbo link
-```
+## 🔒 Security
 
-Without global `turbo`:
+- **Multi-tenant** — every user's data is completely isolated by organization
+- **RBAC** — role-based access control (Owner → Admin → Manager → Employee)
+- **MFA** — managed by Clerk's secure authentication center
+- **Audit logs** — every action is recorded with timestamp, IP, and user
+- **Session management** — view and revoke active sessions in real-time
 
-```sh
-npx turbo link
-pnpm exec turbo link
-pnpm exec turbo link
-```
+---
 
-## Useful Links
+## 🗺️ Roadmap
 
-Learn more about the power of Turborepo:
+- [ ] Mobile app (React Native)
+- [ ] Custom AI model fine-tuning per organization
+- [ ] Advanced analytics & forecasting dashboards
+- [ ] Multi-currency & multi-language support
+- [ ] Public API for third-party integrations
+- [ ] White-label / reseller mode
 
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+1. Fork the repo
+2. Create your branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+MIT © [Suryooday](https://github.com/Suryooday)
+
+---
+
+<div align="center">
+
+**Built with ❤️ to give every business the power of an AI-first operating system.**
+
+[⭐ Star this repo](https://github.com/Suryooday/Beonix-OS) · [🐛 Report a bug](https://github.com/Suryooday/Beonix-OS/issues) · [💡 Request a feature](https://github.com/Suryooday/Beonix-OS/issues)
+
+</div>
