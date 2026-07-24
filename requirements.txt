@@ -84,6 +84,7 @@ pandas==3.0.3
 propcache==0.5.2
 proto-plus==1.28.1
 protobuf==7.35.1
+psycopg2-binary==2.9.10
 pyasn1==0.6.4
 pyasn1_modules==0.4.2
 pybase64==1.4.3
