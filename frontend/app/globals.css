@@ -1,0 +1,526 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ─── Token Mapping ─────────────────────────────────────────── */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), sans-serif;
+  --font-display: var(--font-newsreader), serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PREMIUM EDITORIAL & MINIMALIST DESIGN SYSTEM
+   Warm Bone Canvas + Crisp Borders + Spot Pastels
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* HubSpot Canvas & Typography Surfaces */
+  --background: #f5f8fa;
+  /* HubSpot Canvas Gray */
+  --foreground: #2d3e50;
+  /* HubSpot Dark Navy Slate text */
+
+  /* Cards & Modals */
+  --card: #ffffff;
+  --card-foreground: #2d3e50;
+  --popover: #ffffff;
+  --popover-foreground: #2d3e50;
+
+  /* Primary Accent — HubSpot Signature Orange */
+  --primary: #ff7a59;
+  --primary-foreground: #ffffff;
+
+  /* Secondary */
+  --secondary: #eaf0f6;
+  --secondary-foreground: #2d3e50;
+
+  /* Muted */
+  --muted: #f5f8fa;
+  --muted-foreground: #516f90;
+  /* HubSpot slate muted ink */
+
+  /* Accent */
+  --accent: #fff1ed;
+  --accent-foreground: #ff7a59;
+
+  /* Destructive */
+  --destructive: #d9381e;
+  /* HubSpot Red */
+
+  /* Borders & Inputs */
+  --border: #cbd6e2;
+  --input: #cbd6e2;
+  --ring: #ff7a59;
+
+  /* Radius */
+  --radius: 8px;
+
+  /* Sidebar & Header */
+  --sidebar: #2d3e50;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #ff7a59;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #374b61;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #374b61;
+  --sidebar-ring: #ff7a59;
+
+  /* HubSpot Dark Navy */
+  --brand-dark: #1f2937;
+  --brand-dark-mid: #2d3e50;
+
+  /* Spot Pastels & Semantic Badges */
+  --pastel-red: #ffebe8;
+  --pastel-red-ink: #d9381e;
+  --pastel-blue: #e5f5f8;
+  --pastel-blue-ink: #0091ae;
+  --pastel-green: #e5f7f5;
+  --pastel-green-ink: #00a38d;
+  --pastel-yellow: #fef8e7;
+  --pastel-yellow-ink: #b27a00;
+
+  /* HubSpot Eases & Layout */
+  --premium-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --section-spacing: 120px;
+  --content-max-width: 1200px;
+}
+
+.dark {
+  /* Dark Editorial Alternative */
+  --background: #0e0e10;
+  --foreground: #e1e1e6;
+
+  --card: #151518;
+  --card-foreground: #e1e1e6;
+  --popover: #151518;
+  --popover-foreground: #e1e1e6;
+
+  --primary: #e1e1e6;
+  --primary-foreground: #0e0e10;
+
+  --secondary: #1a1a1f;
+  --secondary-foreground: #e1e1e6;
+
+  --muted: #1e1e24;
+  --muted-foreground: #a1a1a6;
+
+  --accent: #25252b;
+  --accent-foreground: #e1e1e6;
+
+  --destructive: #e06c75;
+
+  --border: #202024;
+  --input: #202024;
+  --ring: #e1e1e6;
+
+  --sidebar: #151518;
+  --sidebar-foreground: #e1e1e6;
+  --sidebar-primary: #e1e1e6;
+  --sidebar-primary-foreground: #0e0e10;
+  --sidebar-accent: #1e1e24;
+  --sidebar-accent-foreground: #e1e1e6;
+  --sidebar-border: #202024;
+  --sidebar-ring: #e1e1e6;
+
+  /* Spot Pastels Dark Mode adjustments */
+  --pastel-red: rgba(224, 108, 117, 0.15);
+  --pastel-red-ink: #e06c75;
+  --pastel-blue: rgba(97, 175, 239, 0.15);
+  --pastel-blue-ink: #61afef;
+  --pastel-green: rgba(152, 195, 121, 0.15);
+  --pastel-green-ink: #98c379;
+  --pastel-yellow: rgba(229, 192, 123, 0.15);
+  --pastel-yellow-ink: #e5c07b;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════════════════════ */
+
+html {
+  scroll-behavior: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
+}
+
+/* Force native cursor — never hide it */
+*,
+*::before,
+*::after {
+  cursor: inherit;
+}
+
+html,
+body {
+  cursor: auto;
+}
+
+a,
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+select,
+label,
+[data-clickable],
+.cursor-pointer {
+  cursor: pointer;
+}
+
+input:not([type="button"]):not([type="submit"]):not([type="reset"]),
+textarea {
+  cursor: text;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TYPOGRAPHY Hierarchy
+   ═══════════════════════════════════════════════════════════════ */
+
+.text-display-xl {
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.5rem, 5.5vw, 5.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+
+.text-display-lg {
+  font-family: var(--font-display), serif;
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+}
+
+.text-display-md {
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.5rem, 3vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+.text-display-sm {
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+}
+
+.text-body-lg {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  letter-spacing: -0.005em;
+  font-weight: 400;
+}
+
+.text-body {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.text-caption {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  font-weight: 500;
+}
+
+.text-overline {
+  font-size: 0.6875rem;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PREMIUM MINIMAL UI CONTAINERS & BUTTONS
+   ═══════════════════════════════════════════════════════════════ */
+
+.minimal-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.01);
+  transition: transform 0.25s var(--premium-ease), box-shadow 0.25s var(--premium-ease);
+}
+
+.minimal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.button-minimal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border-radius: var(--radius-md);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border: 1px solid var(--primary);
+  transition: all 0.2s var(--premium-ease);
+}
+
+.button-minimal:hover {
+  background: #2e46d6;
+  border-color: #2e46d6;
+}
+
+.button-minimal:active {
+  transform: scale(0.98);
+}
+
+.button-minimal-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background: transparent;
+  color: var(--foreground);
+  border-radius: var(--radius-md);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  transition: all 0.2s var(--premium-ease);
+}
+
+.button-minimal-secondary:hover {
+  background: var(--muted);
+  border-color: var(--muted-foreground);
+}
+
+.button-minimal-secondary:active {
+  transform: scale(0.98);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   KEYBOARD SHORTCUT MICRO-UI
+   ═══════════════════════════════════════════════════════════════ */
+
+kbd {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  padding: 0.15rem 0.35rem;
+  background: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--muted-foreground);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FAUX-OS WINDOW CHROME
+   ═══════════════════════════════════════════════════════════════ */
+
+.faux-window-chrome {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.02);
+}
+
+.faux-window-header {
+  padding: 0.75rem 1.25rem;
+  border-b: 1px solid var(--border);
+  background: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faux-window-dots {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.faux-window-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #eaeaea;
+}
+
+.faux-window-dot.close {
+  background: #e06c75;
+  opacity: 0.6;
+}
+
+.faux-window-dot.minimize {
+  background: #e5c07b;
+  opacity: 0.6;
+}
+
+.faux-window-dot.maximize {
+  background: #98c379;
+  opacity: 0.6;
+}
+
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SCROLLBAR
+   ═══════════════════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SELECTION
+   ═══════════════════════════════════════════════════════════════ */
+
+::selection {
+  background: rgba(17, 17, 17, 0.08);
+  color: var(--foreground);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PIPELINE STAGE COLORS (CRM) WITH SPOT PASTELS
+   ═══════════════════════════════════════════════════════════════ */
+
+.stage-new {
+  --stage-color: var(--pastel-blue-ink);
+  --stage-bg: var(--pastel-blue);
+}
+
+.stage-contacted {
+  --stage-color: var(--pastel-yellow-ink);
+  --stage-bg: var(--pastel-yellow);
+}
+
+.stage-qualified {
+  --stage-color: var(--pastel-green-ink);
+  --stage-bg: var(--pastel-green);
+}
+
+.stage-proposal {
+  --stage-color: #787774;
+  --stage-bg: var(--muted);
+}
+
+.stage-closed {
+  --stage-color: var(--pastel-green-ink);
+  --stage-bg: var(--pastel-green);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes float-orb {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes line-pulse {
+  from {
+    stroke-dashoffset: 24;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.line-pulse-active {
+  stroke-dasharray: 4 4;
+  animation: line-pulse 1s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
