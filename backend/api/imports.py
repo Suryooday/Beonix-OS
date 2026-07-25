@@ -19,7 +19,8 @@ from backend.schemas.import_job import (
 router = APIRouter(prefix="/imports", tags=["Bulk Lead Import"])
 
 # Ensure temp directory exists inside workspace
-UPLOAD_DIR = "/Users/suryodaypratapsingh/Desktop/icons/Placement/PROJECT/beonix/backend/storage/uploads"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+UPLOAD_DIR = os.path.join(BASE_DIR, "storage", "uploads")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 @router.post("/upload", response_model=ImportPreviewResponse)

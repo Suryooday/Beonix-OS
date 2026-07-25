@@ -29,7 +29,8 @@ from backend.services.gmail_service import GmailService
 
 router = APIRouter(prefix="/emails", tags=["AI Outreach Engine"])
 
-ATTACHMENT_DIR = "backend/storage/attachments"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ATTACHMENT_DIR = os.path.join(BASE_DIR, "storage", "attachments")
 os.makedirs(ATTACHMENT_DIR, exist_ok=True)
 
 # ── GMAIL AUTH & OAUTH ENDPOINTS ──
